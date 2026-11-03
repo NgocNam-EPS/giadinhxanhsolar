@@ -1,0 +1,129 @@
+/* Gia Đình Xanh Solar: design tokens (màu theo logo, 03/11/2026)
+   Hotline báo giá / Zalo: 0762 252 595 · Facebook: https://www.facebook.com/giadinhxanhsolar
+   Chế độ tối: theo hệ điều hành, hoặc đặt data-theme="dark" trên <html>. */
+:root {
+  --surface: #ffffff;
+  --surface-alt: #f3f8f2;
+  --surface-tint: #e6f3e0;
+  --ink: #0b2a52;
+  --ink-muted: #4a5a6b;
+  --line: #d5e0dc;
+  --line-strong: #8a9bab;
+  --navy: #033262;
+  --on-navy: #ffffff;
+  --leaf: #1f7a18;
+  --leaf-bright: #6cb014;
+  --on-leaf: #ffffff;
+  --sun: #fcbc00;
+  --sun-deep: #e8a200;
+  --on-sun: #3a2600;
+  --sun-soft: #fff3cc;
+  --orange: #fb8200;
+  --sky: #1d6fb5;
+  --sky-soft: #e2effa;
+  --zalo: #0068ff;
+  --on-zalo: #ffffff;
+  --facebook: #0866ff;
+  --on-facebook: #ffffff;
+  --danger: #c0352b;
+  --warning: #9a5800;
+  --shadow-card: 0 1px 2px rgba(11,42,82,0.06), 0 8px 24px rgba(11,42,82,0.07);
+  --shadow-pop: 0 18px 48px rgba(11,42,82,0.18);
+  --shadow-cta: 0 8px 20px rgba(232,162,0,0.32);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-14: 56px;
+  --space-20: 80px;
+  --container: 1200px;
+  --container-narrow: 720px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --font-display: Lexend, "Be Vietnam Pro", system-ui, sans-serif;
+  --font-body: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #0e1620;
+    --surface-alt: #142030;
+    --surface-tint: #1c2e21;
+    --ink: #e9eff7;
+    --ink-muted: #a8b6c6;
+    --line: #2a3646;
+    --line-strong: #5c6b7c;
+    --navy: #8fb8ea;
+    --on-navy: #0e1620;
+    --leaf: #6cc45a;
+    --leaf-bright: #8fd43a;
+    --on-leaf: #0b140e;
+    --sun: #ffc21a;
+    --sun-deep: #ffd257;
+    --on-sun: #2a1b00;
+    --sun-soft: #3a2c0e;
+    --orange: #ff9a2e;
+    --sky: #6cb2f0;
+    --sky-soft: #13283b;
+    --danger: #ff8a80;
+    --warning: #ffb74d;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+    --shadow-pop: 0 18px 48px rgba(0,0,0,0.55);
+    --shadow-cta: 0 8px 24px rgba(255,194,26,0.22);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --surface: #0e1620;
+  --surface-alt: #142030;
+  --surface-tint: #1c2e21;
+  --ink: #e9eff7;
+  --ink-muted: #a8b6c6;
+  --line: #2a3646;
+  --line-strong: #5c6b7c;
+  --navy: #8fb8ea;
+  --on-navy: #0e1620;
+  --leaf: #6cc45a;
+  --leaf-bright: #8fd43a;
+  --on-leaf: #0b140e;
+  --sun: #ffc21a;
+  --sun-deep: #ffd257;
+  --on-sun: #2a1b00;
+  --sun-soft: #3a2c0e;
+  --orange: #ff9a2e;
+  --sky: #6cb2f0;
+  --sky-soft: #13283b;
+  --danger: #ff8a80;
+  --warning: #ffb74d;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.35);
+  --shadow-pop: 0 18px 48px rgba(0,0,0,0.55);
+  --shadow-cta: 0 8px 24px rgba(255,194,26,0.22);
+  color-scheme: dark;
+}
+
+/* Kiểu chữ */
+.t-display { font-family: var(--font-display); font-size: 56px; line-height: 62px; font-weight: 700; letter-spacing: -0.02em; }
+.t-h1 { font-family: var(--font-display); font-size: 44px; line-height: 52px; font-weight: 700; letter-spacing: -0.015em; }
+.t-h2 { font-family: var(--font-display); font-size: 34px; line-height: 42px; font-weight: 600; letter-spacing: -0.01em; }
+.t-h3 { font-family: var(--font-display); font-size: 24px; line-height: 32px; font-weight: 600; }
+.t-h4 { font-family: var(--font-display); font-size: 19px; line-height: 26px; font-weight: 600; }
+.t-number-xl { font-family: var(--font-display); font-size: 44px; line-height: 48px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.t-lead { font-family: var(--font-body); font-size: 19px; line-height: 30px; font-weight: 400; }
+.t-body { font-family: var(--font-body); font-size: 16px; line-height: 26px; font-weight: 400; }
+.t-body-sm { font-family: var(--font-body); font-size: 14px; line-height: 22px; font-weight: 400; }
+.t-label { font-family: var(--font-body); font-size: 14px; line-height: 20px; font-weight: 600; }
+.t-button { font-family: var(--font-body); font-size: 16px; line-height: 20px; font-weight: 600; }
+.t-caption { font-family: var(--font-body); font-size: 13px; line-height: 18px; font-weight: 400; }
+.t-eyebrow { font-family: var(--font-body); font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+@media (max-width: 640px) {
+  .t-display { font-size: 38px; line-height: 44px; }
+  .t-h1 { font-size: 32px; line-height: 40px; }
+  .t-h2 { font-size: 28px; line-height: 36px; }
+}
