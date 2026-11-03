@@ -6,7 +6,7 @@
      GOOGLE_SCRIPT_URL: dán link Web App của Google Apps Script (xem HUONG-DAN-TRIEN-KHAI.md).
      Để trống thì form không gửi được và sẽ hướng khách gọi / nhắn Zalo. */
   var CONFIG = {
-    GOOGLE_SCRIPT_URL: '',
+    GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxPOBPA8CFzwE-7t1_npAOkfOZdDihD9N1y6w8O7VX6ywapDA1cS0fZ0yhncTkTENUpAA/exec',
     HOTLINE: '0762 252 595',
     ZALO_URL: 'https://zalo.me/0762252595',
     VAT: 0.08,                       // VAT điện sinh hoạt đang áp dụng
