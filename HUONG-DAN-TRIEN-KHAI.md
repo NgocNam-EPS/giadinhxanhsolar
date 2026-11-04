@@ -9,6 +9,7 @@ Thư mục `website` gồm:
 | `assets/css/components.css` | Nút, form, card... |
 | `assets/css/site.css` | Bố cục trang chủ |
 | `assets/js/main.js` | Công cụ ước tính tiết kiệm + gửi form. **Phần CẤU HÌNH ở đầu file** |
+| `assets/js/i18n.js` | Bản dịch tiếng Anh và tiếng Trung, nút chọn ngôn ngữ |
 | `assets/img/` | Logo, favicon, ảnh công trình, ảnh chia sẻ Facebook |
 | `google-apps-script.gs` | Mã nhận form vào Google Sheets |
 
@@ -66,7 +67,19 @@ Các nội dung dưới đây là số liệu tham khảo hoặc mặc định. 
 - **Mục hỏi đáp về bán điện dư** (tối đa 50%, quy định sửa đổi 06/2026): nên kiểm tra lại số hiệu nghị định khi công bố chính thức.
 - Chưa có mục **đánh giá của khách hàng**. Khi có nhận xét thật (kèm tên, khu vực, sự đồng ý của khách), thêm vào sau phần Công trình.
 
-## 5. Liên hệ đang dùng trên web
+## 5. Đa ngôn ngữ (VI / EN / 中文)
+
+- Nút **VI / EN / 中文** ở đầu trang. Trang nhớ ngôn ngữ khách đã chọn cho lần sau.
+- Link mở thẳng một ngôn ngữ (dùng cho quảng cáo nhắm người nước ngoài):
+  - Tiếng Anh: `https://giadinhxanhsolar.vn/?lang=en`
+  - Tiếng Trung: `https://giadinhxanhsolar.vn/?lang=zh`
+- Tiếng Việt là nội dung gốc trong `index.html`. Bản dịch nằm trong `assets/js/i18n.js`: phần `STATIC.en`, `STATIC.zh` cho chữ trên trang; phần `DYNAMIC` cho chữ của công cụ ước tính và thông báo form.
+- **Khi sửa một câu tiếng Việt** trong `index.html`, nhớ sửa câu tương ứng (cùng khóa `data-i18n`) trong `i18n.js` cho tiếng Anh và tiếng Trung.
+- Dữ liệu gửi về Google Sheets vẫn bằng tiếng Việt. Cột "Nguồn form" có thêm `[EN]` hoặc `[中文]` để biết khách xem trang bằng ngôn ngữ nào.
+- Khách nước ngoài có thể nhập số điện thoại quốc tế dạng `+86...`, `+1...`.
+- Tiếng Trung dùng chữ giản thể (简体). Nên nhờ người bản ngữ đọc lại bản dịch trước khi chạy quảng cáo bằng tiếng Trung.
+
+## 6. Liên hệ đang dùng trên web
 
 - Hotline/Zalo: 0762 252 595 (`tel:0762252595`, `https://zalo.me/0762252595`)
 - Facebook: https://www.facebook.com/giadinhxanhsolar

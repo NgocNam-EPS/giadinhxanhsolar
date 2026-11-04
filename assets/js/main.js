@@ -1,14 +1,12 @@
-/* Gia Đình Xanh Solar: công cụ ước tính + form khảo sát */
+/* Gia Đình Xanh Solar: công cụ ước tính + form khảo sát (dùng i18n.js cho VI / EN / 中文) */
 (function () {
   'use strict';
 
   /* ================= CẤU HÌNH =================
-     GOOGLE_SCRIPT_URL: dán link Web App của Google Apps Script (xem HUONG-DAN-TRIEN-KHAI.md).
+     GOOGLE_SCRIPT_URL: link Web App của Google Apps Script (xem HUONG-DAN-TRIEN-KHAI.md).
      Để trống thì form không gửi được và sẽ hướng khách gọi / nhắn Zalo. */
   var CONFIG = {
     GOOGLE_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxPOBPA8CFzwE-7t1_npAOkfOZdDihD9N1y6w8O7VX6ywapDA1cS0fZ0yhncTkTENUpAA/exec',
-    HOTLINE: '0762 252 595',
-    ZALO_URL: 'https://zalo.me/0762252595',
     VAT: 0.08,                       // VAT điện sinh hoạt đang áp dụng
     PANEL_WP: 580,                   // công suất 1 tấm pin
     PANEL_AREA: 2.6,                 // m² mái cho mỗi tấm (gồm khoảng hở)
@@ -21,6 +19,9 @@
 
   // Biểu giá điện sinh hoạt 6 bậc, chưa VAT (QĐ 1279/QĐ-BCT ngày 09/5/2025)
   var TIERS = [[50, 1984], [50, 2050], [100, 2380], [100, 2998], [100, 3350], [Infinity, 3460]];
+
+  var I = window.GDXI18N;
+  var LANG_TAG = { vi: '', en: ' [EN]', zh: ' [中文]' };
 
   function costOf(kwh) {
     var rest = Math.max(0, kwh), total = 0;
@@ -63,11 +64,15 @@
     };
   }
 
-  var fmt = new Intl.NumberFormat('vi-VN');
-  var fmt1 = new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 1, minimumFractionDigits: 1 });
-  function money(v) { return fmt.format(Math.round(v / 1000) * 1000); }
-  function trieu(v) { return fmt1.format(v / 1e6); }
+  // Định dạng tiếng Việt cố định cho dữ liệu gửi về Google Sheets
+  var fmtVi = new Intl.NumberFormat('vi-VN');
+  var fmtVi1 = new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 1, minimumFractionDigits: 1 });
+  function moneyVi(v) { return fmtVi.format(Math.round(v / 1000) * 1000); }
+
   function $(id) { return document.getElementById(id); }
+  function moneyText(v) { var m = I.money(v); return m[0] + m[1]; }
+  function moneyHtml(v) { var m = I.money(v); return m[0] + '<small>' + m[1].trim() + '</small>'; }
+  function bigHtml(v) { var b = I.big(v); return '≈ ' + b[0] + '<small>' + b[1] + '</small>'; }
 
   /* ---------- Chip chọn một ---------- */
   function selectChip(chip) {
@@ -86,6 +91,7 @@
       group.dispatchEvent(new Event('change', { bubbles: true }));
     });
   });
+  // Giá trị gửi về Sheet luôn là tiếng Việt (data-value), bất kể khách xem ngôn ngữ nào
   function chipValue(scope, name) {
     var g = scope.querySelector('.gdx-chips[data-name="' + name + '"]');
     var on = g && g.querySelector('.gdx-chip[aria-pressed="true"]');
@@ -110,27 +116,35 @@
     var c = document.querySelector('#' + id + ' .gdx-chip[aria-pressed="true"]');
     return c ? parseFloat(c.getAttribute(attr)) : fallback;
   }
+  function parseMoney(s) { var n = parseInt(String(s).replace(/[^\d]/g, ''), 10); return isNaN(n) ? 0 : n; }
+  function currentBill() { return parseMoney(input.value) || +range.value; }
+
   function render(bill) {
     var r = estimate(bill, currentChip('regionChips', 'data-yield', 4.2), currentChip('dayChips', 'data-day', 0.6));
     last = { bill: bill, r: r };
-    $('billOut').textContent = fmt.format(bill) + 'đ';
-    $('rSave').innerHTML = money(r.save) + '<small>đ</small>';
-    $('rSaveNote').textContent = 'Hóa đơn còn khoảng ' + money(r.newBill) + 'đ (' + fmt.format(Math.round(r.kwh)) + ' kWh/tháng hiện tại)';
-    $('rKwp').innerHTML = fmt1.format(r.kwp) + '<small>kWp</small>';
-    $('rPanels').textContent = r.panels + ' tấm pin ' + CONFIG.PANEL_WP + ' Wp';
-    $('rKwh').innerHTML = fmt.format(Math.round(r.prod / 10) * 10) + '<small>kWh/tháng</small>';
-    $('rArea').textContent = 'Cần khoảng ' + Math.ceil(r.area) + ' m² mái trống nắng';
-    $('rCost').innerHTML = '≈ ' + trieu(r.cost) + '<small>triệu</small>';
-    $('rPayback').textContent = r.payback ? 'Hoàn vốn khoảng ' + fmt1.format(r.payback) + ' năm' : 'Cần khảo sát để tính';
-    $('cBefore').textContent = money(bill) + 'đ';
-    $('cAfter').textContent = money(r.newBill) + 'đ';
+    $('billOut').textContent = I.num(bill) + I.money(0)[1];
+    $('rSave').innerHTML = moneyHtml(r.save);
+    $('rSaveNote').textContent = I.t('newBill', { bill: moneyText(r.newBill), kwh: I.num(Math.round(r.kwh)) });
+    $('rKwp').innerHTML = I.num1(r.kwp) + '<small>kWp</small>';
+    $('rPanels').textContent = I.t('panels', { n: r.panels, wp: CONFIG.PANEL_WP });
+    $('rKwh').innerHTML = I.num(Math.round(r.prod / 10) * 10) + '<small>' + I.t('kwhMonth') + '</small>';
+    $('rArea').textContent = I.t('area', { m: Math.ceil(r.area) });
+    $('rCost').innerHTML = bigHtml(r.cost);
+    $('rPayback').textContent = r.payback ? I.t('payback', { y: I.num1(r.payback) }) : I.t('paybackNa');
+    $('cBefore').textContent = moneyText(bill);
+    $('cAfter').textContent = moneyText(r.newBill);
     $('barBefore').style.width = '100%';
     $('barAfter').style.width = Math.max(4, Math.min(100, r.newBill / bill * 100)) + '%';
   }
-  function parseMoney(s) { var n = parseInt(String(s).replace(/[^\d]/g, ''), 10); return isNaN(n) ? 0 : n; }
+  function renderHero() {
+    var hero = $('heroSave');
+    if (!hero) return;
+    var b = I.big(estimate(2300000, 4.2, 0.6).save);
+    hero.textContent = '≈ ' + b[0] + (I.lang === 'vi' ? ' ' : '') + b[1];
+  }
 
   if (range && input) {
-    range.addEventListener('input', function () { input.value = fmt.format(+range.value); render(+range.value); });
+    range.addEventListener('input', function () { input.value = I.num(+range.value); render(+range.value); });
     input.addEventListener('input', function () {
       var v = parseMoney(input.value);
       if (v >= 100000 && v <= 200000000) { range.value = Math.min(10000000, Math.max(500000, v)); render(v); }
@@ -138,16 +152,24 @@
     input.addEventListener('blur', function () {
       var v = parseMoney(input.value);
       if (v < 100000) v = +range.value;
-      input.value = fmt.format(v);
+      input.value = I.num(v);
     });
-    $('regionChips').addEventListener('change', function () { render(parseMoney(input.value) || +range.value); });
-    $('dayChips').addEventListener('change', function () { render(parseMoney(input.value) || +range.value); });
+    $('regionChips').addEventListener('change', function () { render(currentBill()); });
+    $('dayChips').addEventListener('change', function () { render(currentBill()); });
+    input.value = I.num(+range.value);
     render(+range.value);
   }
+  renderHero();
 
-  // Số liệu ví dụ trên hero tính bằng cùng công thức
-  var hero = $('heroSave');
-  if (hero) hero.textContent = '≈ ' + trieu(estimate(2300000, 4.2, 0.6).save).replace(/,0$/, '') + ' triệu';
+  // Đổi ngôn ngữ: vẽ lại các con số theo định dạng mới, cập nhật thông báo lỗi đang hiện
+  document.addEventListener('gdx:lang', function () {
+    if (range && input) { var v = currentBill(); input.value = I.num(v); render(v); }
+    renderHero();
+    document.querySelectorAll('.gdx-field--error').forEach(function (f) {
+      var el = f.querySelector('.gdx-input');
+      if (el) setError(el, I.t(el.id === 'sName' ? 'errName' : 'errPhone'));
+    });
+  });
 
   /* ---------- Đưa dữ liệu ước tính / gói vào form ---------- */
   var survey = $('surveyForm');
@@ -158,7 +180,7 @@
   var calcCta = $('calcCta');
   if (calcCta) calcCta.addEventListener('click', function () {
     if (!last) return;
-    $('sEstimate').value = 'Hóa đơn ' + fmt.format(last.bill) + 'đ; đề xuất ' + fmt1.format(last.r.kwp) + ' kWp (' + last.r.panels + ' tấm); tiết kiệm ≈ ' + money(last.r.save) + 'đ/tháng';
+    $('sEstimate').value = 'Hóa đơn ' + fmtVi.format(last.bill) + 'đ; đề xuất ' + fmtVi1.format(last.r.kwp) + ' kWp (' + last.r.panels + ' tấm); tiết kiệm ≈ ' + moneyVi(last.r.save) + 'đ/tháng';
     chipSelectByValue(survey, 'bill', billRangeLabel(last.bill));
     goToSurvey();
   });
@@ -167,17 +189,18 @@
   });
 
   /* ---------- Gửi form ---------- */
-  function normPhone(s) { return String(s).replace(/[^\d+]/g, '').replace(/^\+?84/, '0'); }
-  function validPhone(s) { return /^0(3|5|7|8|9)\d{8}$/.test(normPhone(s)); }
+  function normPhone(s) {
+    var d = String(s).replace(/[^\d+]/g, '');
+    return /^\+?84/.test(d) ? d.replace(/^\+?84/, '0') : d;
+  }
+  // Số Việt Nam 10 chữ số, hoặc số quốc tế dạng +mã nước (cho khách nước ngoài)
+  function validPhone(s) { var p = normPhone(s); return /^0(3|5|7|8|9)\d{8}$/.test(p) || /^\+\d{8,15}$/.test(p); }
   function setError(inputEl, msg) {
     var field = inputEl.closest('.gdx-field'), hint = field.querySelector('.gdx-hint');
     field.classList.toggle('gdx-field--error', !!msg);
     inputEl.setAttribute('aria-invalid', msg ? 'true' : 'false');
-    if (hint) {
-      if (!hint.dataset.default) hint.dataset.default = hint.textContent;
-      hint.textContent = msg || hint.dataset.default;
-      hint.hidden = !msg && !hint.dataset.default;
-    }
+    // Các ô có báo lỗi (tên, số điện thoại) dùng ô gợi ý trống, ẩn sẵn
+    if (hint) { hint.textContent = msg || ''; hint.hidden = !msg; }
   }
   function status(form, kind, html) {
     var box = form.querySelector('.form-status');
@@ -190,29 +213,27 @@
     ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'fbclid'].forEach(function (k) { if (p.get(k)) out.push(k + '=' + p.get(k)); });
     return out.join('&');
   }
-  function send(form, data, okMsg) {
+  function send(form, data, okHtml) {
     var btn = form.querySelector('button[type="submit"]');
-    var contact = 'Gọi <a href="tel:0762252595">' + CONFIG.HOTLINE + '</a> hoặc <a href="' + CONFIG.ZALO_URL + '" target="_blank" rel="noopener">nhắn Zalo</a>.';
     if (!CONFIG.GOOGLE_SCRIPT_URL) {
       console.warn('[Gia Đình Xanh] Chưa cấu hình GOOGLE_SCRIPT_URL trong assets/js/main.js');
-      status(form, 'err', 'Form đang bảo trì, thông tin chưa gửi được. Anh/chị vui lòng ' + contact);
+      status(form, 'err', I.t('maint') + I.t('contact'));
       return;
     }
+    data.source = data.source + LANG_TAG[I.lang];
     data.time = new Date().toLocaleString('vi-VN');
     data.page = location.href.split('?')[0];
     data.utm = utm();
     btn.disabled = true;
-    var oldText = btn.textContent; btn.textContent = 'Đang gửi...';
+    var oldText = btn.textContent; btn.textContent = I.t('sending');
     fetch(CONFIG.GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(data) })
       .then(function () {
-        status(form, 'ok', okMsg);
+        status(form, 'ok', okHtml);
         form.reset && form.reset();
         if (window.fbq) window.fbq('track', 'Lead');
         if (window.gtag) window.gtag('event', 'generate_lead');
       })
-      .catch(function () {
-        status(form, 'err', 'Mạng đang chập chờn nên chưa gửi được. Anh/chị thử lại, hoặc ' + contact);
-      })
+      .catch(function () { status(form, 'err', I.t('net') + I.t('contact')); })
       .then(function () { btn.disabled = false; btn.textContent = oldText; });
   }
 
@@ -220,17 +241,17 @@
   if (quick) quick.addEventListener('submit', function (e) {
     e.preventDefault();
     var ph = $('qPhone');
-    if (!validPhone(ph.value)) { setError(ph, 'Số điện thoại cần đủ 10 chữ số, ví dụ 0762 252 595.'); ph.focus(); return; }
+    if (!validPhone(ph.value)) { setError(ph, I.t('errPhone')); ph.focus(); return; }
     setError(ph, '');
     send(quick, { source: 'Form nhanh (hero)', phone: normPhone(ph.value), bill: chipValue(quick, 'bill') },
-      '<b>Đã nhận số ' + ph.value + '.</b> Kỹ sư Gia Đình Xanh sẽ gọi lại trong giờ làm việc. Muốn được báo giá sát hơn, anh/chị <a href="#bao-gia">trả lời thêm vài câu</a>.');
+      I.t('okQuick', { phone: I.esc(ph.value) }));
   });
 
   if (survey) survey.addEventListener('submit', function (e) {
     e.preventDefault();
     var name = $('sName'), ph = $('sPhone'), bad = null;
-    if (!name.value.trim()) { setError(name, 'Vui lòng cho biết tên để kỹ sư tiện xưng hô.'); bad = bad || name; } else setError(name, '');
-    if (!validPhone(ph.value)) { setError(ph, 'Số điện thoại cần đủ 10 chữ số, ví dụ 0762 252 595.'); bad = bad || ph; } else setError(ph, '');
+    if (!name.value.trim()) { setError(name, I.t('errName')); bad = bad || name; } else setError(name, '');
+    if (!validPhone(ph.value)) { setError(ph, I.t('errPhone')); bad = bad || ph; } else setError(ph, '');
     if (bad) { bad.focus(); return; }
     send(survey, {
       source: 'Form khảo sát',
@@ -238,7 +259,7 @@
       bill: chipValue(survey, 'bill'), roof: chipValue(survey, 'roof'), building: chipValue(survey, 'building'),
       need: chipValue(survey, 'need'), note: $('sNote').value.trim(),
       package: $('sPackage').value, estimate: $('sEstimate').value
-    }, '<b>Cảm ơn anh/chị ' + name.value.trim() + '!</b> Kỹ sư sẽ gọi số ' + ph.value + ' để hẹn lịch khảo sát. Có thể gửi trước ảnh hóa đơn điện qua <a href="' + CONFIG.ZALO_URL + '" target="_blank" rel="noopener">Zalo ' + CONFIG.HOTLINE + '</a>.');
+    }, I.t('okSurvey', { name: I.esc(name.value.trim()), phone: I.esc(ph.value) }));
   });
 
   var y = $('year'); if (y) y.textContent = new Date().getFullYear();

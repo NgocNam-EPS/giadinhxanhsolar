@@ -16,6 +16,8 @@
 <meta property="og:url" content="https://giadinhxanhsolar.vn/">
 <meta property="og:image" content="https://giadinhxanhsolar.vn/assets/img/og-image.jpg">
 <meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +36,8 @@
   "image": "https://giadinhxanhsolar.vn/assets/img/logo.jpg",
   "url": "https://giadinhxanhsolar.vn/",
   "sameAs": ["https://www.facebook.com/giadinhxanhsolar", "https://zalo.me/0762252595"],
-  "description": "Lắp đặt điện mặt trời mái nhà cho hộ gia đình, nhà xưởng, nhà trọ."
+  "description": "Lắp đặt điện mặt trời mái nhà cho hộ gia đình, nhà xưởng, nhà trọ.",
+  "availableLanguage": ["vi", "en", "zh"]
 }
 </script>
 
@@ -52,28 +55,33 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 ===== HẾT META PIXEL ===== -->
 </head>
 <body class="gdx-root">
-<a class="skip" href="#main">Bỏ qua đến nội dung chính</a>
+<a class="skip" href="#main" data-i18n="skip">Bỏ qua đến nội dung chính</a>
 
 <!-- ============ HEADER ============ -->
 <header class="site-header" id="top">
   <div class="container site-header__in">
-    <a class="brand" href="#top" aria-label="Gia Đình Xanh Solar, về đầu trang">
+    <a class="brand" href="#top" aria-label="Gia Đình Xanh Solar, về đầu trang" data-i18n-attr="aria-label:nav.brandAria">
       <img src="assets/img/logo-mark.png" alt="" width="58" height="50">
       <span class="brand__text"><b>Gia Đình <span>Xanh</span></b><small>Solar</small></span>
     </a>
-    <nav class="site-nav" aria-label="Điều hướng chính">
-      <a href="#uoc-tinh">Ước tính</a>
-      <a href="#goi">Gói lắp đặt</a>
-      <a href="#cong-trinh">Công trình</a>
-      <a href="#quy-trinh">Quy trình</a>
-      <a href="#hoi-dap">Hỏi đáp</a>
+    <nav class="site-nav" aria-label="Điều hướng chính" data-i18n-attr="aria-label:nav.aria">
+      <a href="#uoc-tinh" data-i18n="nav.est">Ước tính</a>
+      <a href="#goi" data-i18n="nav.pkg">Gói lắp đặt</a>
+      <a href="#cong-trinh" data-i18n="nav.proj">Công trình</a>
+      <a href="#quy-trinh" data-i18n="nav.proc">Quy trình</a>
+      <a href="#hoi-dap" data-i18n="nav.faq">Hỏi đáp</a>
     </nav>
     <div class="site-header__act">
-      <a class="hotline" href="tel:0762252595"><span>Báo giá &amp; Zalo</span><strong>0762 252 595</strong></a>
-      <a class="gdx-btn gdx-btn--facebook gdx-btn--sm icon-btn" href="https://www.facebook.com/giadinhxanhsolar" target="_blank" rel="noopener" aria-label="Fanpage Facebook Gia Đình Xanh Solar">
+      <a class="hotline" href="tel:0762252595"><span data-i18n="hdr.hotline">Báo giá &amp; Zalo</span><strong>0762 252 595</strong></a>
+      <div class="lang-switch" role="group" aria-label="Chọn ngôn ngữ" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-lang="vi" lang="vi" aria-pressed="true" title="Tiếng Việt">VI</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+        <button type="button" data-lang="zh" lang="zh-CN" aria-pressed="false" title="简体中文">中文</button>
+      </div>
+      <a class="gdx-btn gdx-btn--facebook gdx-btn--sm icon-btn" href="https://www.facebook.com/giadinhxanhsolar" target="_blank" rel="noopener" aria-label="Fanpage Facebook Gia Đình Xanh Solar" data-i18n-attr="aria-label:hdr.fbAria">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2z"/></svg>
       </a>
-      <a class="gdx-btn gdx-btn--primary gdx-btn--sm" href="#bao-gia">Nhận báo giá</a>
+      <a class="gdx-btn gdx-btn--primary gdx-btn--sm hdr-cta" href="#bao-gia" data-i18n="hdr.cta">Nhận báo giá</a>
     </div>
   </div>
 </header>
@@ -84,43 +92,43 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="hero">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <span class="gdx-eyebrow">Điện mặt trời mái nhà cho gia đình</span>
-      <h1 class="hero__title">Mái nhà làm ra tiền điện cho cả nhà</h1>
-      <p class="hero__lead">Cho chúng tôi biết tiền điện mỗi tháng. Kỹ sư Gia Đình Xanh tính sẵn công suất phù hợp, số tiền tiết kiệm và gửi báo giá trọn gói qua Zalo.</p>
+      <span class="gdx-eyebrow" data-i18n="hero.eyebrow">Điện mặt trời mái nhà cho gia đình</span>
+      <h1 class="hero__title" data-i18n="hero.title">Mái nhà làm ra tiền điện cho cả nhà</h1>
+      <p class="hero__lead" data-i18n="hero.lead">Cho chúng tôi biết tiền điện mỗi tháng. Kỹ sư Gia Đình Xanh tính sẵn công suất phù hợp, số tiền tiết kiệm và gửi báo giá trọn gói qua Zalo.</p>
 
       <form class="quick-form" id="quickForm" novalidate>
-        <div class="gdx-label" id="qBillLabel">Tiền điện trung bình mỗi tháng</div>
+        <div class="gdx-label" id="qBillLabel" data-i18n="q.billLabel">Tiền điện trung bình mỗi tháng</div>
         <div class="gdx-chips" role="radiogroup" aria-labelledby="qBillLabel" data-name="bill">
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Dưới 1 triệu">Dưới 1 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-value="1 – 2 triệu">1 – 2 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="2 – 4 triệu">2 – 4 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Trên 4 triệu">Trên 4 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Dưới 1 triệu" data-i18n="chip.b1">Dưới 1 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-value="1 – 2 triệu" data-i18n="chip.b2">1 – 2 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="2 – 4 triệu" data-i18n="chip.b3">2 – 4 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Trên 4 triệu" data-i18n="chip.b4">Trên 4 triệu</button>
         </div>
         <div class="quick-form__row">
           <div class="gdx-field">
-            <label class="gdx-label sr-only" for="qPhone">Số điện thoại</label>
-            <input class="gdx-input" id="qPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Số điện thoại của anh/chị" required>
+            <label class="gdx-label sr-only" for="qPhone" data-i18n="q.phoneLabel">Số điện thoại</label>
+            <input class="gdx-input" id="qPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Số điện thoại của anh/chị" data-i18n-attr="placeholder:q.phonePh" required>
             <span class="gdx-hint" hidden></span>
           </div>
-          <button class="gdx-btn gdx-btn--primary gdx-btn--lg" type="submit">Nhận báo giá miễn phí</button>
+          <button class="gdx-btn gdx-btn--primary gdx-btn--lg" type="submit" data-i18n="q.submit">Nhận báo giá miễn phí</button>
         </div>
-        <p class="form-note">Kỹ sư gọi lại trong giờ làm việc. Thông tin chỉ dùng để tư vấn.</p>
+        <p class="form-note" data-i18n="q.note">Kỹ sư gọi lại trong giờ làm việc. Thông tin chỉ dùng để tư vấn.</p>
         <div class="form-status" role="status" aria-live="polite" hidden></div>
       </form>
 
       <ul class="hero__trust">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Khảo sát mái miễn phí</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Báo giá trọn gói, ghi rõ từng hạng mục</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lo thủ tục với điện lực</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.t1">Khảo sát mái miễn phí</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.t2">Báo giá trọn gói, ghi rõ từng hạng mục</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.t3">Lo thủ tục với điện lực</span></li>
       </ul>
     </div>
 
     <figure class="hero__media">
-      <img src="assets/img/cong-trinh-03-mai-ton-nha-pho.jpg" alt="18 tấm pin mặt trời Gia Đình Xanh lắp trên mái tôn nhà phố, ảnh chụp từ flycam" width="926" height="741" fetchpriority="high">
+      <img src="assets/img/cong-trinh-03-mai-ton-nha-pho.jpg" alt="18 tấm pin mặt trời Gia Đình Xanh lắp trên mái tôn nhà phố, ảnh chụp từ flycam" data-i18n-attr="alt:hero.imgAlt" width="926" height="741" fetchpriority="high">
       <figcaption class="hero__badge">
-        <span class="hero__badge-label">Ví dụ hóa đơn 2,3 triệu/tháng</span>
-        <span class="hero__badge-value" id="heroSave">≈ 1,3 triệu</span>
-        <span class="hero__badge-note">tiết kiệm mỗi tháng với hệ khoảng 3,5 kWp</span>
+        <span class="hero__badge-label" data-i18n="hero.badgeLabel">Ví dụ hóa đơn 2,3 triệu/tháng</span>
+        <span class="hero__badge-value" id="heroSave">≈ 1,2 triệu</span>
+        <span class="hero__badge-note" data-i18n="hero.badgeNote">tiết kiệm mỗi tháng với hệ khoảng 3,5 kWp</span>
       </figcaption>
     </figure>
   </div>
@@ -130,19 +138,19 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section section--alt" id="gia-dien">
   <div class="container split">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Vì sao tiền điện tăng nhanh</span>
-      <h2>Càng dùng nhiều, mỗi số điện càng đắt</h2>
-      <p>Giá điện sinh hoạt tính theo 6 bậc. Từ số thứ 401 trở đi, mỗi kWh đắt gần gấp đôi bậc 1. Điện mặt trời cắt đúng phần điện đắt nhất này trước.</p>
-      <p class="caption">Giá chưa VAT theo Quyết định 1279/QĐ-BCT ngày 09/5/2025. Hóa đơn cộng thêm VAT 8%.</p>
+      <span class="gdx-eyebrow" data-i18n="tier.eyebrow">Vì sao tiền điện tăng nhanh</span>
+      <h2 data-i18n="tier.title">Càng dùng nhiều, mỗi số điện càng đắt</h2>
+      <p data-i18n="tier.lead">Giá điện sinh hoạt tính theo 6 bậc. Từ số thứ 401 trở đi, mỗi kWh đắt gần gấp đôi bậc 1. Điện mặt trời cắt đúng phần điện đắt nhất này trước.</p>
+      <p class="caption" data-i18n="tier.caption">Giá chưa VAT theo Quyết định 1279/QĐ-BCT ngày 09/5/2025. Hóa đơn cộng thêm VAT 8%.</p>
     </div>
-    <div class="tiers" role="img" aria-label="Biểu đồ giá điện 6 bậc: bậc 1 1.984 đồng, bậc 6 3.460 đồng mỗi kWh">
+    <div class="tiers" role="img" aria-label="Biểu đồ giá điện 6 bậc: bậc 1 1.984 đồng, bậc 6 3.460 đồng mỗi kWh" data-i18n-attr="aria-label:tier.aria">
       <div class="tier" style="--h:57%"><span class="tier__price">1.984</span><span class="tier__bar"></span><span class="tier__lbl">0–50</span></div>
       <div class="tier" style="--h:59%"><span class="tier__price">2.050</span><span class="tier__bar"></span><span class="tier__lbl">51–100</span></div>
       <div class="tier" style="--h:69%"><span class="tier__price">2.380</span><span class="tier__bar"></span><span class="tier__lbl">101–200</span></div>
       <div class="tier" style="--h:87%"><span class="tier__price">2.998</span><span class="tier__bar"></span><span class="tier__lbl">201–300</span></div>
       <div class="tier tier--hot" style="--h:97%"><span class="tier__price">3.350</span><span class="tier__bar"></span><span class="tier__lbl">301–400</span></div>
-      <div class="tier tier--hot" style="--h:100%"><span class="tier__price">3.460</span><span class="tier__bar"></span><span class="tier__lbl">Từ 401</span></div>
-      <div class="tiers__axis"><span>đồng/kWh</span><span>kWh mỗi tháng</span></div>
+      <div class="tier tier--hot" style="--h:100%"><span class="tier__price">3.460</span><span class="tier__bar"></span><span class="tier__lbl" data-i18n="tier.from401">Từ 401</span></div>
+      <div class="tiers__axis"><span data-i18n="tier.axis">đồng/kWh</span><span>kWh</span></div>
     </div>
   </div>
 </section>
@@ -151,38 +159,38 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section" id="uoc-tinh">
   <div class="container">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Công cụ ước tính</span>
-      <h2>Nhà bạn tiết kiệm được bao nhiêu?</h2>
-      <p>Kéo thanh trượt theo hóa đơn tiền điện gần nhất. Kết quả tính theo biểu giá EVN hiện hành.</p>
+      <span class="gdx-eyebrow" data-i18n="calc.eyebrow">Công cụ ước tính</span>
+      <h2 data-i18n="calc.title">Nhà bạn tiết kiệm được bao nhiêu?</h2>
+      <p data-i18n="calc.lead">Kéo thanh trượt theo hóa đơn tiền điện gần nhất. Kết quả tính theo biểu giá EVN hiện hành.</p>
     </div>
 
     <div class="calc">
       <div class="calc__input">
         <div class="gdx-field">
-          <label class="gdx-label" for="billRange">Tiền điện mỗi tháng (đã gồm VAT)</label>
+          <label class="gdx-label" for="billRange" data-i18n="calc.billLabel">Tiền điện mỗi tháng (đã gồm VAT)</label>
           <output class="calc__bill" id="billOut" for="billRange billInput">2.300.000đ</output>
           <input type="range" id="billRange" min="500000" max="10000000" step="100000" value="2300000" aria-describedby="billHint">
-          <div class="calc__scale"><span>500 nghìn</span><span>10 triệu</span></div>
+          <div class="calc__scale"><span data-i18n="calc.min">500 nghìn</span><span data-i18n="calc.max">10 triệu</span></div>
         </div>
         <div class="gdx-field">
-          <label class="gdx-label" for="billInput">Hoặc nhập chính xác</label>
+          <label class="gdx-label" for="billInput" data-i18n="calc.exact">Hoặc nhập chính xác</label>
           <input class="gdx-input" id="billInput" type="text" inputmode="numeric" value="2.300.000" aria-describedby="billHint">
-          <span class="gdx-hint" id="billHint">Số tiền ghi trên hóa đơn hoặc app EVN.</span>
+          <span class="gdx-hint" id="billHint" data-i18n="calc.hint">Số tiền ghi trên hóa đơn hoặc app EVN.</span>
         </div>
         <div>
-          <div class="gdx-label" id="regionLabel" style="margin-bottom:8px">Khu vực</div>
+          <div class="gdx-label" id="regionLabel" style="margin-bottom:8px" data-i18n="calc.region">Khu vực</div>
           <div class="gdx-chips" role="radiogroup" aria-labelledby="regionLabel" id="regionChips">
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-yield="4.2">Miền Nam</button>
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-yield="4.0">Miền Trung</button>
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-yield="3.3">Miền Bắc</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-yield="4.2" data-i18n="calc.south">Miền Nam</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-yield="4.0" data-i18n="calc.central">Miền Trung</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-yield="3.3" data-i18n="calc.north">Miền Bắc</button>
           </div>
         </div>
         <div>
-          <div class="gdx-label" id="dayLabel" style="margin-bottom:8px">Ban ngày nhà có dùng nhiều điện không?</div>
+          <div class="gdx-label" id="dayLabel" style="margin-bottom:8px" data-i18n="calc.day">Ban ngày nhà có dùng nhiều điện không?</div>
           <div class="gdx-chips" role="radiogroup" aria-labelledby="dayLabel" id="dayChips">
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-day="0.45">Ít, đi làm cả ngày</button>
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-day="0.6">Vừa phải</button>
-            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-day="0.75">Nhiều, có người ở nhà/kinh doanh</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-day="0.45" data-i18n="calc.d1">Ít, đi làm cả ngày</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="true" aria-checked="true" data-day="0.6" data-i18n="calc.d2">Vừa phải</button>
+            <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-day="0.75" data-i18n="calc.d3">Nhiều, có người ở nhà/kinh doanh</button>
           </div>
         </div>
       </div>
@@ -190,22 +198,22 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
       <div class="calc__result" aria-live="polite">
         <div class="gdx-stats">
           <div class="gdx-stat gdx-stat--sun calc__main">
-            <span class="gdx-stat__label">Tiết kiệm mỗi tháng</span>
+            <span class="gdx-stat__label" data-i18n="calc.saveLabel">Tiết kiệm mỗi tháng</span>
             <span class="gdx-stat__value" id="rSave">0<small>đ</small></span>
             <span class="gdx-stat__note" id="rSaveNote">Hóa đơn còn khoảng 0đ</span>
           </div>
-          <div class="gdx-stat"><span class="gdx-stat__label">Công suất đề xuất</span><span class="gdx-stat__value" id="rKwp">0<small>kWp</small></span><span class="gdx-stat__note" id="rPanels">0 tấm pin 580 Wp</span></div>
-          <div class="gdx-stat"><span class="gdx-stat__label">Sản lượng</span><span class="gdx-stat__value" id="rKwh">0<small>kWh/tháng</small></span><span class="gdx-stat__note" id="rArea">Cần khoảng 0 m² mái</span></div>
-          <div class="gdx-stat"><span class="gdx-stat__label">Chi phí tham khảo</span><span class="gdx-stat__value" id="rCost">0<small>triệu</small></span><span class="gdx-stat__note" id="rPayback">Hoàn vốn khoảng 0 năm</span></div>
+          <div class="gdx-stat"><span class="gdx-stat__label" data-i18n="calc.kwpLabel">Công suất đề xuất</span><span class="gdx-stat__value" id="rKwp">0<small>kWp</small></span><span class="gdx-stat__note" id="rPanels">0 tấm pin 580 Wp</span></div>
+          <div class="gdx-stat"><span class="gdx-stat__label" data-i18n="calc.kwhLabel">Sản lượng</span><span class="gdx-stat__value" id="rKwh">0<small>kWh/tháng</small></span><span class="gdx-stat__note" id="rArea">Cần khoảng 0 m² mái</span></div>
+          <div class="gdx-stat"><span class="gdx-stat__label" data-i18n="calc.costLabel">Chi phí tham khảo</span><span class="gdx-stat__value" id="rCost">0<small>triệu</small></span><span class="gdx-stat__note" id="rPayback">Hoàn vốn khoảng 0 năm</span></div>
         </div>
 
         <div class="compare" aria-hidden="true">
-          <div class="compare__row"><span>Trước khi lắp</span><div class="compare__bar"><i class="compare__before" id="barBefore"></i></div><b id="cBefore">0</b></div>
-          <div class="compare__row"><span>Sau khi lắp</span><div class="compare__bar"><i class="compare__after" id="barAfter"></i></div><b id="cAfter">0</b></div>
+          <div class="compare__row"><span data-i18n="calc.before">Trước khi lắp</span><div class="compare__bar"><i class="compare__before" id="barBefore"></i></div><b id="cBefore">0</b></div>
+          <div class="compare__row"><span data-i18n="calc.after">Sau khi lắp</span><div class="compare__bar"><i class="compare__after" id="barAfter"></i></div><b id="cAfter">0</b></div>
         </div>
 
-        <button class="gdx-btn gdx-btn--primary gdx-btn--lg gdx-btn--block" type="button" id="calcCta">Nhận báo giá chính xác cho hệ này</button>
-        <p class="caption">Ước tính theo giá điện 6 bậc (QĐ 1279/QĐ-BCT) cộng VAT 8%, sản lượng trung bình mỗi kWp theo khu vực, khoảng 75% điện mặt trời dùng trực tiếp trong nhà. Chưa tính tiền bán điện dư. Chi phí tham khảo cho hệ hòa lưới; con số chính xác có sau khi kỹ sư khảo sát mái.</p>
+        <button class="gdx-btn gdx-btn--primary gdx-btn--lg gdx-btn--block" type="button" id="calcCta" data-i18n="calc.cta">Nhận báo giá chính xác cho hệ này</button>
+        <p class="caption" data-i18n="calc.caption">Ước tính theo giá điện 6 bậc (QĐ 1279/QĐ-BCT) cộng VAT 8%, sản lượng trung bình mỗi kWp theo khu vực, khoảng 75% điện mặt trời dùng trực tiếp trong nhà. Chưa tính tiền bán điện dư. Chi phí tham khảo cho hệ hòa lưới; con số chính xác có sau khi kỹ sư khảo sát mái.</p>
       </div>
     </div>
   </div>
@@ -215,49 +223,49 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section section--alt" id="goi">
   <div class="container">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Báo giá minh bạch</span>
-      <h2>Chọn gói theo tiền điện mỗi tháng</h2>
-      <p>Giá trọn gói đã gồm tấm pin, inverter, khung giàn, dây cáp, tủ điện, công lắp và thủ tục với điện lực.</p>
+      <span class="gdx-eyebrow" data-i18n="pkg.eyebrow">Báo giá minh bạch</span>
+      <h2 data-i18n="pkg.title">Chọn gói theo tiền điện mỗi tháng</h2>
+      <p data-i18n="pkg.lead">Giá trọn gói đã gồm tấm pin, inverter, khung giàn, dây cáp, tủ điện, công lắp và thủ tục với điện lực.</p>
     </div>
     <div class="packages">
       <article class="gdx-card">
-        <span class="gdx-badge gdx-badge--leaf">Hòa lưới</span>
-        <h3>Gói 3,5 kWp</h3>
-        <div class="gdx-price">≈ 42 triệu <small>trọn gói</small></div>
+        <span class="gdx-badge gdx-badge--leaf" data-i18n="badge.grid">Hòa lưới</span>
+        <h3 data-i18n="pkg.p1">Gói 3,5 kWp</h3>
+        <div class="gdx-price"><span data-i18n="pkg.price1">≈ 42 triệu</span> <small data-i18n="pkg.allin">trọn gói</small></div>
         <ul class="gdx-spec">
-          <li><span>Hóa đơn phù hợp</span><span>1 – 1,8 triệu</span></li>
-          <li><span>Số tấm pin</span><span>6 tấm 580 Wp</span></li>
-          <li><span>Sản lượng (miền Nam)</span><span>≈ 440 kWh/tháng</span></li>
-          <li><span>Diện tích mái</span><span>≈ 16 m²</span></li>
+          <li><span data-i18n="pkg.billFit">Hóa đơn phù hợp</span><span data-i18n="pkg.v1">1 – 1,8 triệu</span></li>
+          <li><span data-i18n="pkg.panels">Số tấm pin</span><span data-i18n="pkg.n6">6 tấm 580 Wp</span></li>
+          <li><span data-i18n="pkg.output">Sản lượng (miền Nam)</span><span data-i18n="pkg.o1">≈ 440 kWh/tháng</span></li>
+          <li><span data-i18n="pkg.area">Diện tích mái</span><span>≈ 16 m²</span></li>
         </ul>
-        <a class="gdx-btn gdx-btn--outline gdx-btn--block" href="#bao-gia" data-package="Gói 3,5 kWp hòa lưới">Nhận báo giá gói này</a>
+        <a class="gdx-btn gdx-btn--outline gdx-btn--block" href="#bao-gia" data-package="Gói 3,5 kWp hòa lưới" data-i18n="pkg.cta">Nhận báo giá gói này</a>
       </article>
       <article class="gdx-card gdx-card--featured">
-        <span class="gdx-badge gdx-badge--sun">Phù hợp nhiều gia đình</span>
-        <h3>Gói 5,2 kWp</h3>
-        <div class="gdx-price">≈ 58,5 triệu <small>trọn gói</small></div>
+        <span class="gdx-badge gdx-badge--sun" data-i18n="badge.popular">Phù hợp nhiều gia đình</span>
+        <h3 data-i18n="pkg.p2">Gói 5,2 kWp</h3>
+        <div class="gdx-price"><span data-i18n="pkg.price2">≈ 58,5 triệu</span> <small data-i18n="pkg.allin">trọn gói</small></div>
         <ul class="gdx-spec">
-          <li><span>Hóa đơn phù hợp</span><span>1,8 – 3 triệu</span></li>
-          <li><span>Số tấm pin</span><span>9 tấm 580 Wp</span></li>
-          <li><span>Sản lượng (miền Nam)</span><span>≈ 660 kWh/tháng</span></li>
-          <li><span>Diện tích mái</span><span>≈ 24 m²</span></li>
+          <li><span data-i18n="pkg.billFit">Hóa đơn phù hợp</span><span data-i18n="pkg.v2">1,8 – 3 triệu</span></li>
+          <li><span data-i18n="pkg.panels">Số tấm pin</span><span data-i18n="pkg.n9">9 tấm 580 Wp</span></li>
+          <li><span data-i18n="pkg.output">Sản lượng (miền Nam)</span><span data-i18n="pkg.o2">≈ 660 kWh/tháng</span></li>
+          <li><span data-i18n="pkg.area">Diện tích mái</span><span>≈ 24 m²</span></li>
         </ul>
-        <a class="gdx-btn gdx-btn--primary gdx-btn--block" href="#bao-gia" data-package="Gói 5,2 kWp hòa lưới">Nhận báo giá gói này</a>
+        <a class="gdx-btn gdx-btn--primary gdx-btn--block" href="#bao-gia" data-package="Gói 5,2 kWp hòa lưới" data-i18n="pkg.cta">Nhận báo giá gói này</a>
       </article>
       <article class="gdx-card">
-        <span class="gdx-badge gdx-badge--sky">Hybrid lưu trữ</span>
-        <h3>Gói 8,1 kWp + pin 10 kWh</h3>
-        <div class="gdx-price">≈ 132 triệu <small>trọn gói</small></div>
+        <span class="gdx-badge gdx-badge--sky" data-i18n="badge.hybrid">Hybrid lưu trữ</span>
+        <h3 data-i18n="pkg.p3">Gói 8,1 kWp + pin 10 kWh</h3>
+        <div class="gdx-price"><span data-i18n="pkg.price3">≈ 132 triệu</span> <small data-i18n="pkg.allin">trọn gói</small></div>
         <ul class="gdx-spec">
-          <li><span>Hóa đơn phù hợp</span><span>Trên 3 triệu</span></li>
-          <li><span>Số tấm pin</span><span>14 tấm 580 Wp</span></li>
-          <li><span>Sản lượng (miền Nam)</span><span>≈ 1.020 kWh/tháng</span></li>
-          <li><span>Điểm khác</span><span>Có điện khi cúp lưới</span></li>
+          <li><span data-i18n="pkg.billFit">Hóa đơn phù hợp</span><span data-i18n="pkg.v3">Trên 3 triệu</span></li>
+          <li><span data-i18n="pkg.panels">Số tấm pin</span><span data-i18n="pkg.n14">14 tấm 580 Wp</span></li>
+          <li><span data-i18n="pkg.output">Sản lượng (miền Nam)</span><span data-i18n="pkg.o3">≈ 1.020 kWh/tháng</span></li>
+          <li><span data-i18n="pkg.extra">Điểm khác</span><span data-i18n="pkg.backup">Có điện khi cúp lưới</span></li>
         </ul>
-        <a class="gdx-btn gdx-btn--outline gdx-btn--block" href="#bao-gia" data-package="Gói 8,1 kWp hybrid + pin 10 kWh">Nhận báo giá gói này</a>
+        <a class="gdx-btn gdx-btn--outline gdx-btn--block" href="#bao-gia" data-package="Gói 8,1 kWp hybrid + pin 10 kWh" data-i18n="pkg.cta">Nhận báo giá gói này</a>
       </article>
     </div>
-    <p class="caption center">Giá tham khảo, thay đổi theo loại mái, khoảng cách đi dây và thương hiệu thiết bị. Báo giá chính xác gửi sau khi khảo sát.</p>
+    <p class="caption center" data-i18n="pkg.caption">Giá tham khảo, thay đổi theo loại mái, khoảng cách đi dây và thương hiệu thiết bị. Báo giá chính xác gửi sau khi khảo sát.</p>
   </div>
 </section>
 
@@ -265,23 +273,23 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section" id="bao-gia-mau">
   <div class="container split split--wide">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Báo giá mẫu</span>
-      <h2>Mỗi hạng mục ghi rõ giá và bảo hành</h2>
-      <p>Đây là cách chúng tôi trình bày báo giá cho gói 5,2 kWp. Không có chi phí phát sinh ngoài bảng.</p>
-      <a class="gdx-btn gdx-btn--secondary" href="#bao-gia">Nhận báo giá cho nhà tôi</a>
+      <span class="gdx-eyebrow" data-i18n="quote.eyebrow">Báo giá mẫu</span>
+      <h2 data-i18n="quote.title">Mỗi hạng mục ghi rõ giá và bảo hành</h2>
+      <p data-i18n="quote.lead">Đây là cách chúng tôi trình bày báo giá cho gói 5,2 kWp. Không có chi phí phát sinh ngoài bảng.</p>
+      <a class="gdx-btn gdx-btn--secondary" href="#bao-gia" data-i18n="quote.cta">Nhận báo giá cho nhà tôi</a>
     </div>
     <div class="gdx-card quote-card">
       <div class="gdx-quote-wrap">
         <table class="gdx-quote">
-          <thead><tr><th>Hạng mục</th><th>Quy cách</th><th class="num">SL</th><th class="num">Thành tiền (đ)</th></tr></thead>
+          <thead><tr><th data-i18n="quote.th1">Hạng mục</th><th data-i18n="quote.th2">Quy cách</th><th class="num" data-i18n="quote.th3">SL</th><th class="num" data-i18n="quote.th4">Thành tiền (đ)</th></tr></thead>
           <tbody>
-            <tr><td>Tấm pin mono 580 Wp</td><td>Bảo hành 12 năm</td><td class="num">9</td><td class="num">27.900.000</td></tr>
-            <tr><td>Inverter hòa lưới 5 kW</td><td>Bảo hành 10 năm</td><td class="num">1</td><td class="num">14.500.000</td></tr>
-            <tr><td>Khung giàn nhôm, phụ kiện</td><td>Theo loại mái</td><td class="num">1</td><td class="num">6.800.000</td></tr>
-            <tr><td>Dây cáp DC/AC, tủ điện</td><td>Có chống sét lan truyền</td><td class="num">1</td><td class="num">4.300.000</td></tr>
-            <tr><td>Nhân công, thủ tục điện lực</td><td>Trọn gói</td><td class="num">1</td><td class="num">5.000.000</td></tr>
+            <tr><td data-i18n="quote.r1">Tấm pin mono 580 Wp</td><td data-i18n="quote.w12">Bảo hành 12 năm</td><td class="num">9</td><td class="num" data-i18n="quote.a1">27.900.000</td></tr>
+            <tr><td data-i18n="quote.r2">Inverter hòa lưới 5 kW</td><td data-i18n="quote.w10">Bảo hành 10 năm</td><td class="num">1</td><td class="num" data-i18n="quote.a2">14.500.000</td></tr>
+            <tr><td data-i18n="quote.r3">Khung giàn nhôm, phụ kiện</td><td data-i18n="quote.s3">Theo loại mái</td><td class="num">1</td><td class="num" data-i18n="quote.a3">6.800.000</td></tr>
+            <tr><td data-i18n="quote.r4">Dây cáp DC/AC, tủ điện</td><td data-i18n="quote.s4">Có chống sét lan truyền</td><td class="num">1</td><td class="num" data-i18n="quote.a4">4.300.000</td></tr>
+            <tr><td data-i18n="quote.r5">Nhân công, thủ tục điện lực</td><td data-i18n="quote.s5">Trọn gói</td><td class="num">1</td><td class="num" data-i18n="quote.a5">5.000.000</td></tr>
           </tbody>
-          <tfoot><tr><td colspan="3">Tổng cộng (đã gồm VAT)</td><td class="num">58.500.000</td></tr></tfoot>
+          <tfoot><tr><td colspan="3" data-i18n="quote.total">Tổng cộng (đã gồm VAT)</td><td class="num" data-i18n="quote.atotal">58.500.000</td></tr></tfoot>
         </table>
       </div>
     </div>
@@ -293,30 +301,30 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
   <div class="container">
     <div class="sechead-row">
       <div class="gdx-sechead">
-        <span class="gdx-eyebrow">Công trình thực tế</span>
-        <h2>Chúng tôi đã lắp trên mái nhà thật</h2>
-        <p>Ảnh flycam chụp sau khi bàn giao. Xem thêm công trình mới trên fanpage.</p>
+        <span class="gdx-eyebrow" data-i18n="proj.eyebrow">Công trình thực tế</span>
+        <h2 data-i18n="proj.title">Chúng tôi đã lắp trên mái nhà thật</h2>
+        <p data-i18n="proj.lead">Ảnh flycam chụp sau khi bàn giao. Xem thêm công trình mới trên fanpage.</p>
       </div>
       <a class="gdx-btn gdx-btn--facebook" href="https://www.facebook.com/giadinhxanhsolar" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2z"/></svg>Xem thêm trên Facebook
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v1.9H8v3.2h2.6V21H14v-9.3h2.6l.4-3.2z"/></svg><span data-i18n="proj.fb">Xem thêm trên Facebook</span>
       </a>
     </div>
     <div class="gdx-projects">
       <article class="gdx-project">
-        <div class="gdx-project__img"><img src="assets/img/cong-trinh-01-mai-ton-nha-vuon.jpg" alt="Nhà vườn mái tôn lắp 18 tấm pin, chụp từ trên cao" loading="lazy" width="1272" height="822"><span class="gdx-badge">18 tấm pin</span></div>
-        <div class="gdx-project__body"><h4>Nhà vườn mái tôn</h4><div class="gdx-project__meta"><span>Hai dãy 8 + 10 tấm, chừa lối đi bảo trì</span></div></div>
+        <div class="gdx-project__img"><img src="assets/img/cong-trinh-01-mai-ton-nha-vuon.jpg" alt="Nhà vườn mái tôn lắp 18 tấm pin, chụp từ trên cao" data-i18n-attr="alt:proj.alt1" loading="lazy" width="1272" height="822"><span class="gdx-badge" data-i18n="proj.n18">18 tấm pin</span></div>
+        <div class="gdx-project__body"><h4 data-i18n="proj.t1">Nhà vườn mái tôn</h4><div class="gdx-project__meta"><span data-i18n="proj.d1">Hai dãy 8 + 10 tấm, chừa lối đi bảo trì</span></div></div>
       </article>
       <article class="gdx-project">
-        <div class="gdx-project__img"><img src="assets/img/cong-trinh-03-mai-ton-nha-pho.jpg" alt="Nhà phố mái tôn lắp 18 tấm pin xen giữa cục nóng máy lạnh" loading="lazy" width="926" height="741"><span class="gdx-badge">18 tấm pin</span></div>
-        <div class="gdx-project__body"><h4>Nhà phố mái tôn</h4><div class="gdx-project__meta"><span>Bố trí né cục nóng máy lạnh, không che bóng</span></div></div>
+        <div class="gdx-project__img"><img src="assets/img/cong-trinh-03-mai-ton-nha-pho.jpg" alt="Nhà phố mái tôn lắp 18 tấm pin xen giữa cục nóng máy lạnh" data-i18n-attr="alt:proj.alt2" loading="lazy" width="926" height="741"><span class="gdx-badge" data-i18n="proj.n18">18 tấm pin</span></div>
+        <div class="gdx-project__body"><h4 data-i18n="proj.t2">Nhà phố mái tôn</h4><div class="gdx-project__meta"><span data-i18n="proj.d2">Bố trí né cục nóng máy lạnh, không che bóng</span></div></div>
       </article>
       <article class="gdx-project">
-        <div class="gdx-project__img"><img src="assets/img/cong-trinh-04-mai-ton-nha-ong.jpg" alt="Nhà ống mái tôn lắp 20 tấm pin chia bốn dãy" loading="lazy" width="822" height="735"><span class="gdx-badge">20 tấm pin</span></div>
-        <div class="gdx-project__body"><h4>Nhà ống mái tôn</h4><div class="gdx-project__meta"><span>Bốn dãy 5 tấm trên hai mái nối</span></div></div>
+        <div class="gdx-project__img"><img src="assets/img/cong-trinh-04-mai-ton-nha-ong.jpg" alt="Nhà ống mái tôn lắp 20 tấm pin chia bốn dãy" data-i18n-attr="alt:proj.alt3" loading="lazy" width="822" height="735"><span class="gdx-badge" data-i18n="proj.n20">20 tấm pin</span></div>
+        <div class="gdx-project__body"><h4 data-i18n="proj.t3">Nhà ống mái tôn</h4><div class="gdx-project__meta"><span data-i18n="proj.d3">Bốn dãy 5 tấm trên hai mái nối</span></div></div>
       </article>
       <article class="gdx-project">
-        <div class="gdx-project__img"><img src="assets/img/cong-trinh-02-mai-ton-xuong.jpg" alt="Nhà xưởng mái tôn lắp khoảng 30 tấm pin thành hai hàng" loading="lazy" width="1600" height="587"><span class="gdx-badge">30 tấm pin</span></div>
-        <div class="gdx-project__body"><h4>Nhà xưởng mái tôn</h4><div class="gdx-project__meta"><span>Hai hàng liền khối, phục vụ sản xuất ban ngày</span></div></div>
+        <div class="gdx-project__img"><img src="assets/img/cong-trinh-02-mai-ton-xuong.jpg" alt="Nhà xưởng mái tôn lắp khoảng 30 tấm pin thành hai hàng" data-i18n-attr="alt:proj.alt4" loading="lazy" width="1600" height="587"><span class="gdx-badge" data-i18n="proj.n30">30 tấm pin</span></div>
+        <div class="gdx-project__body"><h4 data-i18n="proj.t4">Nhà xưởng mái tôn</h4><div class="gdx-project__meta"><span data-i18n="proj.d4">Hai hàng liền khối, phục vụ sản xuất ban ngày</span></div></div>
       </article>
     </div>
   </div>
@@ -326,29 +334,29 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section" id="vi-sao">
   <div class="container">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Cam kết của Gia Đình Xanh</span>
-      <h2>Lắp cho nhà mình, nên làm như nhà mình</h2>
+      <span class="gdx-eyebrow" data-i18n="why.eyebrow">Cam kết của Gia Đình Xanh</span>
+      <h2 data-i18n="why.title">Lắp cho nhà mình, nên làm như nhà mình</h2>
     </div>
     <div class="reasons">
       <div class="reason">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg>
-        <h4>Khảo sát tận nơi, miễn phí</h4>
-        <p>Kỹ sư lên mái đo đạc, kiểm tra kết cấu và hướng nắng trước khi báo giá.</p>
+        <h4 data-i18n="why.h1">Khảo sát tận nơi, miễn phí</h4>
+        <p data-i18n="why.p1">Kỹ sư lên mái đo đạc, kiểm tra kết cấu và hướng nắng trước khi báo giá.</p>
       </div>
       <div class="reason">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h5"/></svg>
-        <h4>Báo giá ghi rõ từng hạng mục</h4>
-        <p>Thiết bị, số lượng, bảo hành ghi trong báo giá và hợp đồng. Không phát sinh.</p>
+        <h4 data-i18n="why.h2">Báo giá ghi rõ từng hạng mục</h4>
+        <p data-i18n="why.p2">Thiết bị, số lượng, bảo hành ghi trong báo giá và hợp đồng. Không phát sinh.</p>
       </div>
       <div class="reason">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
-        <h4>Lo thủ tục với điện lực</h4>
-        <p>Hỗ trợ đăng ký, thay công tơ hai chiều nếu nhà muốn bán phần điện dư.</p>
+        <h4 data-i18n="why.h3">Lo thủ tục với điện lực</h4>
+        <p data-i18n="why.p3">Hỗ trợ đăng ký, thay công tơ hai chiều nếu nhà muốn bán phần điện dư.</p>
       </div>
       <div class="reason">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        <h4>Đồng hành sau lắp đặt</h4>
-        <p>Hướng dẫn theo dõi sản lượng trên điện thoại, vệ sinh tấm pin, xử lý bảo hành.</p>
+        <h4 data-i18n="why.h4">Đồng hành sau lắp đặt</h4>
+        <p data-i18n="why.p4">Hướng dẫn theo dõi sản lượng trên điện thoại, vệ sinh tấm pin, xử lý bảo hành.</p>
       </div>
     </div>
   </div>
@@ -358,14 +366,14 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section section--alt" id="quy-trinh">
   <div class="container">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Quy trình 4 bước</span>
-      <h2>Từ hóa đơn điện đến mái nhà có điện</h2>
+      <span class="gdx-eyebrow" data-i18n="proc.eyebrow">Quy trình 4 bước</span>
+      <h2 data-i18n="proc.title">Từ hóa đơn điện đến mái nhà có điện</h2>
     </div>
     <ol class="gdx-steps">
-      <li class="gdx-step"><time>Ngày 1</time><h4>Gửi tiền điện</h4><p>Để lại số điện thoại hoặc gửi ảnh hóa đơn qua Zalo. Nhận báo giá sơ bộ.</p></li>
-      <li class="gdx-step"><time>Ngày 2–3</time><h4>Khảo sát mái</h4><p>Kỹ sư đến đo mái, kiểm tra kết cấu, chọn vị trí đặt inverter.</p></li>
-      <li class="gdx-step"><time>Ngày 4–6</time><h4>Lắp đặt</h4><p>Thi công 1–2 ngày tùy công suất, gọn gàng, giữ nguyên chống thấm mái.</p></li>
-      <li class="gdx-step"><time>Ngày 7</time><h4>Bàn giao</h4><p>Chạy thử, hướng dẫn xem sản lượng trên điện thoại, kích hoạt bảo hành.</p></li>
+      <li class="gdx-step"><time data-i18n="proc.d1">Ngày 1</time><h4 data-i18n="proc.h1">Gửi tiền điện</h4><p data-i18n="proc.p1">Để lại số điện thoại hoặc gửi ảnh hóa đơn qua Zalo. Nhận báo giá sơ bộ.</p></li>
+      <li class="gdx-step"><time data-i18n="proc.d2">Ngày 2–3</time><h4 data-i18n="proc.h2">Khảo sát mái</h4><p data-i18n="proc.p2">Kỹ sư đến đo mái, kiểm tra kết cấu, chọn vị trí đặt inverter.</p></li>
+      <li class="gdx-step"><time data-i18n="proc.d3">Ngày 4–6</time><h4 data-i18n="proc.h3">Lắp đặt</h4><p data-i18n="proc.p3">Thi công 1–2 ngày tùy công suất, gọn gàng, giữ nguyên chống thấm mái.</p></li>
+      <li class="gdx-step"><time data-i18n="proc.d4">Ngày 7</time><h4 data-i18n="proc.h4">Bàn giao</h4><p data-i18n="proc.p4">Chạy thử, hướng dẫn xem sản lượng trên điện thoại, kích hoạt bảo hành.</p></li>
     </ol>
   </div>
 </section>
@@ -374,37 +382,37 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section" id="hoi-dap">
   <div class="container container--narrow">
     <div class="gdx-sechead">
-      <span class="gdx-eyebrow">Câu hỏi thường gặp</span>
-      <h2>Giải đáp nhanh trước khi lắp</h2>
+      <span class="gdx-eyebrow" data-i18n="faq.eyebrow">Câu hỏi thường gặp</span>
+      <h2 data-i18n="faq.title">Giải đáp nhanh trước khi lắp</h2>
     </div>
     <div class="faq">
       <details>
-        <summary>Lắp điện mặt trời mái nhà có cần xin phép không?</summary>
-        <p>Hộ gia đình lắp hệ tự sản tự tiêu dưới 100 kW được miễn giấy phép hoạt động điện lực. Nếu muốn bán phần điện dư, nhà cần công tơ hai chiều; chúng tôi hỗ trợ làm thủ tục với điện lực địa phương.</p>
+        <summary data-i18n="faq.q1">Lắp điện mặt trời mái nhà có cần xin phép không?</summary>
+        <p data-i18n="faq.a1">Hộ gia đình lắp hệ tự sản tự tiêu dưới 100 kW được miễn giấy phép hoạt động điện lực. Nếu muốn bán phần điện dư, nhà cần công tơ hai chiều; chúng tôi hỗ trợ làm thủ tục với điện lực địa phương.</p>
       </details>
       <details>
-        <summary>Điện dư có bán lại cho EVN được không?</summary>
-        <p>Được. Theo quy định sửa đổi tháng 6/2026, hộ gia đình ở nhà riêng lẻ đấu nối lưới hạ áp được bán tối đa 50% sản lượng điện dư lên lưới, có lắp công tơ hai chiều. Giá mua do bên mua điện công bố theo quy định. Vì giá bán thấp hơn giá mua điện, hệ nên thiết kế để dùng trực tiếp trong nhà là chính.</p>
+        <summary data-i18n="faq.q2">Điện dư có bán lại cho EVN được không?</summary>
+        <p data-i18n="faq.a2">Được. Theo quy định sửa đổi tháng 6/2026, hộ gia đình ở nhà riêng lẻ đấu nối lưới hạ áp được bán tối đa 50% sản lượng điện dư lên lưới, có lắp công tơ hai chiều. Giá mua do bên mua điện công bố theo quy định. Vì giá bán thấp hơn giá mua điện, hệ nên thiết kế để dùng trực tiếp trong nhà là chính.</p>
       </details>
       <details>
-        <summary>Mái tôn có lắp được không? Có bị dột không?</summary>
-        <p>Lắp được, đa số công trình của chúng tôi là mái tôn. Khung giàn bắt vào xà gồ bằng ke chuyên dụng, mọi điểm khoan đều có gioăng cao su và keo chống thấm.</p>
+        <summary data-i18n="faq.q3">Mái tôn có lắp được không? Có bị dột không?</summary>
+        <p data-i18n="faq.a3">Lắp được, đa số công trình của chúng tôi là mái tôn. Khung giàn bắt vào xà gồ bằng ke chuyên dụng, mọi điểm khoan đều có gioăng cao su và keo chống thấm.</p>
       </details>
       <details>
-        <summary>Hòa lưới và Hybrid khác nhau thế nào?</summary>
-        <p>Hệ hòa lưới rẻ hơn, hoàn vốn nhanh, nhưng khi lưới điện cúp thì hệ cũng ngừng để an toàn. Hệ Hybrid có pin lưu trữ, dùng được điện mặt trời buổi tối và vẫn có điện khi cúp lưới, chi phí cao hơn.</p>
+        <summary data-i18n="faq.q4">Hòa lưới và Hybrid khác nhau thế nào?</summary>
+        <p data-i18n="faq.a4">Hệ hòa lưới rẻ hơn, hoàn vốn nhanh, nhưng khi lưới điện cúp thì hệ cũng ngừng để an toàn. Hệ Hybrid có pin lưu trữ, dùng được điện mặt trời buổi tối và vẫn có điện khi cúp lưới, chi phí cao hơn.</p>
       </details>
       <details>
-        <summary>Ngày mưa, ngày âm u thì sao?</summary>
-        <p>Tấm pin vẫn phát điện nhưng ít hơn. Phần thiếu tự động lấy từ lưới điện, trong nhà không bị gián đoạn. Con số tiết kiệm trên trang là trung bình cả năm.</p>
+        <summary data-i18n="faq.q5">Ngày mưa, ngày âm u thì sao?</summary>
+        <p data-i18n="faq.a5">Tấm pin vẫn phát điện nhưng ít hơn. Phần thiếu tự động lấy từ lưới điện, trong nhà không bị gián đoạn. Con số tiết kiệm trên trang là trung bình cả năm.</p>
       </details>
       <details>
-        <summary>Bao lâu thì hoàn vốn?</summary>
-        <p>Tùy tiền điện và thói quen dùng điện ban ngày. Công cụ ước tính phía trên tính sẵn cho nhà bạn. Nhà dùng điện nhiều vào ban ngày hoàn vốn nhanh nhất.</p>
+        <summary data-i18n="faq.q6">Bao lâu thì hoàn vốn?</summary>
+        <p data-i18n="faq.a6">Tùy tiền điện và thói quen dùng điện ban ngày. Công cụ ước tính phía trên tính sẵn cho nhà bạn. Nhà dùng điện nhiều vào ban ngày hoàn vốn nhanh nhất.</p>
       </details>
       <details>
-        <summary>Có hỗ trợ trả góp không?</summary>
-        <p>Vui lòng hỏi kỹ sư khi nhận báo giá qua số 0762 252 595 để biết các hình thức thanh toán hiện có.</p>
+        <summary data-i18n="faq.q7">Có hỗ trợ trả góp không?</summary>
+        <p data-i18n="faq.a7">Vui lòng hỏi kỹ sư khi nhận báo giá qua số 0762 252 595 để biết các hình thức thanh toán hiện có.</p>
       </details>
     </div>
   </div>
@@ -414,14 +422,14 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 <section class="section cta-final" id="bao-gia">
   <div class="container cta-final__grid">
     <div class="cta-final__copy">
-      <span class="gdx-eyebrow">Đăng ký khảo sát miễn phí</span>
-      <h2>Nhận báo giá cho mái nhà của bạn</h2>
-      <p>Trả lời vài câu hỏi ngắn. Kỹ sư sẽ gọi lại, hẹn lịch khảo sát và gửi báo giá trọn gói qua Zalo.</p>
+      <span class="gdx-eyebrow" data-i18n="cta.eyebrow">Đăng ký khảo sát miễn phí</span>
+      <h2 data-i18n="cta.title">Nhận báo giá cho mái nhà của bạn</h2>
+      <p data-i18n="cta.lead">Trả lời vài câu hỏi ngắn. Kỹ sư sẽ gọi lại, hẹn lịch khảo sát và gửi báo giá trọn gói qua Zalo.</p>
       <div class="contact-list">
         <a class="gdx-btn gdx-btn--secondary" href="tel:0762252595">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Gọi 0762 252 595</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="cta.call">Gọi 0762 252 595</span></a>
         <a class="gdx-btn gdx-btn--zalo" href="https://zalo.me/0762252595" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Nhắn Zalo, gửi ảnh hóa đơn</a>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span data-i18n="cta.zalo">Nhắn Zalo, gửi ảnh hóa đơn</span></a>
       </div>
     </div>
 
@@ -430,62 +438,62 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
       <input type="hidden" name="estimate" id="sEstimate">
       <div class="survey__row">
         <div class="gdx-field">
-          <label class="gdx-label" for="sName">Họ và tên<span class="gdx-req">*</span></label>
-          <input class="gdx-input" id="sName" name="name" autocomplete="name" placeholder="Nguyễn Văn An" required>
+          <label class="gdx-label" for="sName"><span data-i18n="f.name">Họ và tên</span><span class="gdx-req">*</span></label>
+          <input class="gdx-input" id="sName" name="name" autocomplete="name" placeholder="Nguyễn Văn An" data-i18n-attr="placeholder:f.namePh" required>
           <span class="gdx-hint" hidden></span>
         </div>
         <div class="gdx-field">
-          <label class="gdx-label" for="sPhone">Số điện thoại / Zalo<span class="gdx-req">*</span></label>
+          <label class="gdx-label" for="sPhone"><span data-i18n="f.phone">Số điện thoại / Zalo</span><span class="gdx-req">*</span></label>
           <input class="gdx-input" id="sPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx" required>
           <span class="gdx-hint" hidden></span>
         </div>
       </div>
       <div class="gdx-field">
-        <label class="gdx-label" for="sAddress">Địa chỉ lắp đặt</label>
-        <input class="gdx-input" id="sAddress" name="address" autocomplete="address-level2" placeholder="Phường/xã, quận/huyện, tỉnh/thành">
-        <span class="gdx-hint">Chỉ cần khu vực để kỹ sư ước tính và sắp lịch khảo sát.</span>
+        <label class="gdx-label" for="sAddress" data-i18n="f.addr">Địa chỉ lắp đặt</label>
+        <input class="gdx-input" id="sAddress" name="address" autocomplete="address-level2" placeholder="Phường/xã, quận/huyện, tỉnh/thành" data-i18n-attr="placeholder:f.addrPh">
+        <span class="gdx-hint" data-i18n="f.addrHint">Chỉ cần khu vực để kỹ sư ước tính và sắp lịch khảo sát.</span>
       </div>
       <div>
-        <div class="gdx-label" id="sBillLabel" style="margin-bottom:8px">Tiền điện mỗi tháng</div>
+        <div class="gdx-label" id="sBillLabel" style="margin-bottom:8px" data-i18n="f.bill">Tiền điện mỗi tháng</div>
         <div class="gdx-chips" role="radiogroup" aria-labelledby="sBillLabel" data-name="bill">
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Dưới 1 triệu">Dưới 1 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="1 – 2 triệu">1 – 2 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="2 – 4 triệu">2 – 4 triệu</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Trên 4 triệu">Trên 4 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Dưới 1 triệu" data-i18n="chip.b1">Dưới 1 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="1 – 2 triệu" data-i18n="chip.b2">1 – 2 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="2 – 4 triệu" data-i18n="chip.b3">2 – 4 triệu</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Trên 4 triệu" data-i18n="chip.b4">Trên 4 triệu</button>
         </div>
       </div>
       <div>
-        <div class="gdx-label" id="sRoofLabel" style="margin-bottom:8px">Loại mái</div>
+        <div class="gdx-label" id="sRoofLabel" style="margin-bottom:8px" data-i18n="f.roof">Loại mái</div>
         <div class="gdx-chips" role="radiogroup" aria-labelledby="sRoofLabel" data-name="roof">
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái tôn">Mái tôn</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái bằng bê tông">Mái bằng bê tông</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái ngói">Mái ngói</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Chưa rõ">Chưa rõ</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái tôn" data-i18n="f.roof1">Mái tôn</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái bằng bê tông" data-i18n="f.roof2">Mái bằng bê tông</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Mái ngói" data-i18n="f.roof3">Mái ngói</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Chưa rõ" data-i18n="f.roof4">Chưa rõ</button>
         </div>
       </div>
       <div>
-        <div class="gdx-label" id="sTypeLabel" style="margin-bottom:8px">Công trình</div>
+        <div class="gdx-label" id="sTypeLabel" style="margin-bottom:8px" data-i18n="f.building">Công trình</div>
         <div class="gdx-chips" role="radiogroup" aria-labelledby="sTypeLabel" data-name="building">
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà ở gia đình">Nhà ở gia đình</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà trọ, cho thuê">Nhà trọ, cho thuê</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Cửa hàng, quán">Cửa hàng, quán</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà xưởng">Nhà xưởng</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà ở gia đình" data-i18n="f.b1">Nhà ở gia đình</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà trọ, cho thuê" data-i18n="f.b2">Nhà trọ, cho thuê</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Cửa hàng, quán" data-i18n="f.b3">Cửa hàng, quán</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Nhà xưởng" data-i18n="f.b4">Nhà xưởng</button>
         </div>
       </div>
       <div>
-        <div class="gdx-label" id="sNeedLabel" style="margin-bottom:8px">Nhu cầu</div>
+        <div class="gdx-label" id="sNeedLabel" style="margin-bottom:8px" data-i18n="f.need">Nhu cầu</div>
         <div class="gdx-chips" role="radiogroup" aria-labelledby="sNeedLabel" data-name="need">
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Hòa lưới, giảm tiền điện">Giảm tiền điện</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Hybrid, có điện khi cúp">Có điện khi cúp lưới</button>
-          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Cần tư vấn">Cần tư vấn thêm</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Hòa lưới, giảm tiền điện" data-i18n="f.n1">Giảm tiền điện</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Hybrid, có điện khi cúp" data-i18n="f.n2">Có điện khi cúp lưới</button>
+          <button type="button" class="gdx-chip" role="radio" aria-pressed="false" aria-checked="false" data-value="Cần tư vấn" data-i18n="f.n3">Cần tư vấn thêm</button>
         </div>
       </div>
       <div class="gdx-field">
-        <label class="gdx-label" for="sNote">Ghi chú</label>
-        <textarea class="gdx-input gdx-textarea" id="sNote" name="note" rows="3" placeholder="Giờ tiện gọi, diện tích mái, câu hỏi khác..."></textarea>
+        <label class="gdx-label" for="sNote" data-i18n="f.note">Ghi chú</label>
+        <textarea class="gdx-input gdx-textarea" id="sNote" name="note" rows="3" placeholder="Giờ tiện gọi, diện tích mái, câu hỏi khác..." data-i18n-attr="placeholder:f.notePh"></textarea>
       </div>
-      <button class="gdx-btn gdx-btn--primary gdx-btn--lg gdx-btn--block" type="submit">Gửi yêu cầu khảo sát miễn phí</button>
-      <p class="form-note">Gia Đình Xanh cam kết bảo mật thông tin, chỉ dùng để tư vấn lắp đặt.</p>
+      <button class="gdx-btn gdx-btn--primary gdx-btn--lg gdx-btn--block" type="submit" data-i18n="f.submit">Gửi yêu cầu khảo sát miễn phí</button>
+      <p class="form-note" data-i18n="f.privacy">Gia Đình Xanh cam kết bảo mật thông tin, chỉ dùng để tư vấn lắp đặt.</p>
       <div class="form-status" role="status" aria-live="polite" hidden></div>
     </form>
   </div>
@@ -499,17 +507,17 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
     <div class="gdx-footer__grid">
       <div>
         <img class="gdx-footer__logo" src="assets/img/logo.jpg" alt="Logo Gia Đình Xanh Solar" width="120" height="120">
-        <p>Năng lượng xanh – Cuộc sống an lành</p>
+        <p data-i18n="foot.tagline">Năng lượng xanh – Cuộc sống an lành</p>
       </div>
       <div>
-        <h5>Nhận báo giá</h5>
+        <h5 data-i18n="foot.quote">Nhận báo giá</h5>
         <div class="gdx-footer__hot">0762 252 595</div>
-        <p style="margin-top:4px">Gọi hoặc nhắn Zalo</p>
+        <p style="margin-top:4px" data-i18n="foot.callZalo">Gọi hoặc nhắn Zalo</p>
       </div>
       <div>
-        <h5>Kết nối</h5>
+        <h5 data-i18n="foot.connect">Kết nối</h5>
         <ul>
-          <li><a href="tel:0762252595">Gọi 0762 252 595</a></li>
+          <li><a href="tel:0762252595" data-i18n="cta.call">Gọi 0762 252 595</a></li>
           <li><a href="https://zalo.me/0762252595" target="_blank" rel="noopener">Zalo 0762 252 595</a></li>
           <li><a href="https://www.facebook.com/giadinhxanhsolar" target="_blank" rel="noopener">facebook.com/giadinhxanhsolar</a></li>
         </ul>
@@ -520,12 +528,13 @@ fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 </footer>
 
 <!-- Thanh liên hệ cố định trên điện thoại -->
-<nav class="mobile-bar" aria-label="Liên hệ nhanh">
-  <a href="tel:0762252595"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Gọi</a>
+<nav class="mobile-bar" aria-label="Liên hệ nhanh" data-i18n-attr="aria-label:mbar.aria">
+  <a href="tel:0762252595"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span data-i18n="mbar.call">Gọi</span></a>
   <a href="https://zalo.me/0762252595" target="_blank" rel="noopener" class="mobile-bar__zalo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>Zalo</a>
-  <a href="#bao-gia" class="mobile-bar__cta">Nhận báo giá</a>
+  <a href="#bao-gia" class="mobile-bar__cta" data-i18n="hdr.cta">Nhận báo giá</a>
 </nav>
 
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

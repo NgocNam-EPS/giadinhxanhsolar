@@ -192,3 +192,22 @@ input[type="range"] { width: 100%; accent-color: var(--leaf); height: 28px; curs
 
 /* Logo luôn trên nền trắng ở chế độ tối */
 .gdx-footer__logo { background: #ffffff; }
+
+/* ---------- Chọn ngôn ngữ ---------- */
+.lang-switch { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--line-strong); border-radius: var(--radius-pill); background: var(--surface); flex: none; }
+.lang-switch button {
+  appearance: none; border: 0; background: transparent; color: var(--ink-muted); cursor: pointer;
+  min-width: 36px; height: 30px; padding: 0 var(--space-2); border-radius: var(--radius-pill);
+  font: 600 13px/1 var(--font-body); letter-spacing: .02em;
+}
+.lang-switch button:hover { color: var(--ink); }
+.lang-switch button[aria-pressed="true"] { background: var(--navy); color: var(--on-navy); }
+.lang-switch button:focus-visible { outline: 3px solid var(--sky); outline-offset: 1px; }
+@media (max-width: 480px) { .site-header__act .icon-btn { display: none; } .lang-switch button { min-width: 32px; padding: 0 6px; } }
+
+/* Chữ Trung: dùng font hệ thống có đủ chữ Hán */
+html[lang="zh-CN"] {
+  --font-display: Lexend, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", sans-serif;
+  --font-body: "Be Vietnam Pro", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Noto Sans CJK SC", sans-serif;
+}
+html[lang="zh-CN"] .gdx-eyebrow { letter-spacing: .08em; }
